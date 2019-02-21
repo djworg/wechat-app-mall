@@ -25,7 +25,7 @@
     </button>
   </form>
   <form bindsubmit="withdraw" report-submit="true">
-    <button
+    <!-- <button
       class='btn bth-right'
       type="default"
       size="mini"
@@ -33,7 +33,7 @@
       hover-class="btn-hover"
       plain="true" >
       提现
-    </button>
+    </button> -->
   </form>
 </view>
 <view class='no-data' wx:if="{{!cashlogs}}">暂无资金明细~</view>

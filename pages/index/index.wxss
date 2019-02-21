@@ -5,6 +5,11 @@
   min-height: 100%;
   display: block;
 }
+.pay-container{
+  width: 750rpx;
+  position: relative; 
+
+}
 .swiper-container{
   width: 750rpx;
   position: relative;  
@@ -236,4 +241,14 @@ swiper-item image {
   color:#fff;
   border:none;
   position: relative;
+}
+.pay-now-btn{
+    color:#fff;
+    background:#e64340;
+    border-radius:6px;
+    width:300rpx;
+    height:70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    font-size:28rpx;
 }
