@@ -19,7 +19,7 @@ Page({
     } else {
       that.setData({
         userInfo: userInfo,
-        version: CONFIG.version
+        version: CONFIG.mversion
       })
     }
     this.getUserApiInfo();

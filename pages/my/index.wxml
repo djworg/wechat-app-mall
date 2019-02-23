@@ -68,6 +68,6 @@
   </view>
   
   <view style="height:20rpx;background: #eee;width:100%;"></view>
-  <view class="version">感谢 EastWorld，版本： v {{mversion}}</view>
+  <view class="version">感谢 EastWorld，版本： v {{version}}</view>
   <view style="height:20rpx;background: #eee;width:100%;"></view>
 </view>
