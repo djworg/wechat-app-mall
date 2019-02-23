@@ -4,7 +4,6 @@ const CONFIG = require('../../config.js')
 const wxpay = require('../../utils/pay.js')
 const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */

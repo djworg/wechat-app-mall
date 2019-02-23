@@ -59,7 +59,7 @@
   </view>
   <view style="height:20rpx;background: #eee;width:100%;"></view>
   <view class="about" bindtap="aboutUs">
-    关于我们
+    搭建小程序：：商业合作
   </view>
 
   <view style="height:20rpx;background: #eee;width:100%;"></view>
@@ -68,6 +68,6 @@
   </view>
   
   <view style="height:20rpx;background: #eee;width:100%;"></view>
-  <view class="version">Powered by EastWorld v {{version}}</view>
+  <view class="version">感谢 EastWorld，版本： v {{mversion}}</view>
   <view style="height:20rpx;background: #eee;width:100%;"></view>
 </view>
