@@ -27,8 +27,8 @@ Page({
   },
   aboutUs : function () {
     wx.showModal({
-      title: '关于我们',
-      content: '本系统基于开源小程序商城系统 https://github.com/EastWorld/wechat-app-mall 搭建，祝大家使用愉快！',
+      title: '合作或搭建小程序',
+      content: '请联系13241485550，邮箱dengjunwen1992@163.com',
       showCancel:false
     })
   },

@@ -19,38 +19,7 @@ Page({
     wx.navigateTo({
       url: "/pages/cashier/cashier"
     })
-    // var that = this;
-    // var orderId = e.currentTarget.dataset.id;
-    // var money = e.currentTarget.dataset.money;
-    // var needScore = e.currentTarget.dataset.score;
-    // WXAPI.userAmount(wx.getStorageSync('token')).then(function (res) {
-    //   if (res.code == 0) {
-    //     // res.data.data.balance
-    //     money = money - res.data.balance;
-    //     if (res.data.score < needScore) {
-    //       wx.showModal({
-    //         title: '错误',
-    //         content: '您的积分不足，无法支付',
-    //         showCancel: false
-    //       })
-    //       return;
-    //     }
-    //     if (money <= 0) {
-    //       // 直接使用余额支付
-    //       WXAPI.orderPay(orderId, wx.getStorageSync('token')).then(function (res) {
-    //         that.onShow();
-    //       })
-    //     } else {
-    //       wxpay.wxpay(app, money, orderId, "/pages/home/index");
-    //     }
-    //   } else {
-    //     wx.showModal({
-    //       title: '错误',
-    //       content: '无法获取用户资金信息',
-    //       showCancel: false
-    //     })
-    //   }
-    // })
+   
   },
 
 /**
@@ -69,7 +38,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: wx.getStorageSync('mallName')
+    })
   },
 
   /**

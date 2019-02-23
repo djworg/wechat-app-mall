@@ -18,7 +18,6 @@ page{
     border-bottom: 1rpx solid #eee;
     display: flex;
     font-size: 28rpx;
-    /*justify-content: space-between;*/
 }
 .row-wrap .label{
     width: 160rpx;
