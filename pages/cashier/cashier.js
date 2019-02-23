@@ -213,7 +213,9 @@ Page({
    */
   onLoad: function (options) {
     uid: wx.getStorageSync('uid');
-    //获得当前账户余额
+    wx.setNavigationBarTitle({
+      title: "付款"
+    })
     
   },
   /**

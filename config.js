@@ -4,7 +4,7 @@ module.exports = {
   note: '接口封装',
   subDomain: "8261954cc460f0007b3da795c6e48a25", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
   appid: "wx5fe06dfbe2ee57bc", // 您的小程序的appid，购物单功能需要使用
-  shareProfile: '百款精品商品，总有一款适合您' // 首页转发的时候话术
+  shareProfile: '让我成为您的私人发型师' // 首页转发的时候话术
 }
 /*
 根据自己需要修改下单时候的模板消息内容设置，可增加关闭订单、收货时候模板消息提醒；
