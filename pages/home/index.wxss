@@ -5,15 +5,12 @@
   box-shadow: 06rpx 15rpx 0 rgba(0, 0, 0, 0.2), 06rpx 18rpx 0 rgba(0, 0, 0, 0.19);
   border-radius:0.3em;
 }
-
 .btn{
   margin:20rpx;
   height:300rpx;
   font-size:80rpx;
   font-weight:200;
-
   color:darkseagreen;
-
 }
 .btn::before {
           content: '';
