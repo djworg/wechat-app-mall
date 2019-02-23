@@ -1,0 +1,25 @@
+<!--pages/pay-result/index.wxml-->
+<view class='logo'>
+  <image  style="width: 200rpx; height: 177rpx;" src='/images/wxpaylogo.jpg'/>
+  <view>
+    <label class='font'>支付成功</label>
+  </view>
+</view>
+
+<view class='info-wrap'>
+  <view class='labe-wrap'>
+    <label style='font-size:40rpx;color:#999999'>店名：{{mallName}}</label>
+  </view>
+  
+  <view class='labe-wrap'>
+    消费金额：<label style='font-size: 80rpx'>¥ 50.00{{amount}}</label>
+  </view>
+  
+</view>
+
+<view class='time-wrap'>
+        <canvas canvas-id='clock' style='width:{{canvasHeight}}px;height:{{canvasHeight}}px'></canvas>
+  </view>
+
+
+

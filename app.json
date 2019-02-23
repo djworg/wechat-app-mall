@@ -1,5 +1,4 @@
 {
-
   "pages": [
     "pages/home/index",
     "pages/index/index",
@@ -24,8 +23,8 @@
     "pages/sign/index",
     "pages/fetch-coupon/index",
     "pages/category/category",
-    "pages/payment/payment",
-    "pages/cashier/cashier"
+    "pages/cashier/cashier",
+    "pages/pay-result/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -64,4 +63,3 @@
     "wx56c8f077de74b07c"
   ]
 }
-

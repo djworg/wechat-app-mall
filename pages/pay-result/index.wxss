@@ -1,0 +1,22 @@
+.logo{
+  width:100%;
+  padding-top: 30rpx;
+  text-align:center;
+}
+.font{
+  color: #1AAD19;
+  font-size: 60rpx;
+}
+
+.time-wrap{
+  text-align: center;
+  height: 300rpx;
+  width: 400rpx;
+  margin: auto;
+}
+
+.info-wrap{
+  text-align: center;
+  margin: auto;
+  margin-top: 100rpx;
+}

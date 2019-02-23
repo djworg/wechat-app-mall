@@ -17,7 +17,8 @@ Page({
    */
   pay: function (e) {
     wx.navigateTo({
-      url: "/pages/cashier/cashier"
+      // url: "/pages/cashier/cashier"
+      url: "/pages/pay-result/index"
     })
    
   },

@@ -45,7 +45,7 @@ Page({
       * 支付
       */
   comboPay:function (orderId, amount) {
-    console.log("orderId------:"+orderId);
+
     var that = this;
     var wxNeedPay = that.getWxNeedPay(amount);
     if (wxNeedPay + '1' == '1' || undefined == wxNeedPay) {
@@ -62,7 +62,6 @@ Page({
       
       //先充值，再支付
       wxpay.wxpay(app, wxNeedPay, orderId, "");
-     
     }
     //使用余额支付
     that.balancePay(orderId, amount);
@@ -123,6 +122,14 @@ Page({
       wx.showModal({
         title: '错误',
         content: '请填写正确金额',
+        showCancel: false
+      })
+      return
+    }
+    if(amount < 1 && CONFIG.mode != 'dev'){
+      wx.showModal({
+        title: '错误',
+        content: '输入金额不能小于1元',
         showCancel: false
       })
       return
