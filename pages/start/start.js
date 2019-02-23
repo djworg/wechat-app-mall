@@ -54,7 +54,7 @@ Page({
         data: CONFIG.version
       })
       wx.switchTab({
-        url: '/pages/index/index',
+        url: '/pages/home/index',
       });
     } else {
       wx.showToast({

@@ -12,6 +12,64 @@ function wxpay(app, money, orderId, redirectUrl) {
     remark: remark,
     payName: "在线支付",
     nextAction: nextAction
+  }).then(function (res, lastfunction) {
+    if (res.code == 0) {
+      // 发起支付
+      wx.requestPayment({
+        timeStamp: res.data.timeStamp,
+        nonceStr: res.data.nonceStr,
+        package: 'prepay_id=' + res.data.prepayId,
+        signType: 'MD5',
+        paySign: res.data.sign,
+        fail: function (aaa) {
+          wx.showToast({ title: '支付失败:' + aaa })
+        },
+        success: function () {
+          // 保存 formid
+          WXAPI.addTempleMsgFormid({
+            token: wx.getStorageSync('token'),
+            type: 'pay',
+            formId: res.data.prepayId
+          })
+          // 提示支付成功
+          wx.showToast({ title: '支付成功' })
+          if (redirectUrl + "1" == "1"){
+            return ;
+          }
+          wx.redirectTo({
+            url: redirectUrl
+          });
+        }
+      })
+    } else {
+      wx.showModal({
+        title: '出错了',
+        content: res.code + ':' + res.msg + ':' + res.data,
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })
+    }
+  })
+}
+
+
+
+
+function wxpaynow(app, money, orderId, redirectUrl, remark) {
+  let now_remark = "在线充值";
+  let now_nextAction = {};
+  if (orderId != 0) {
+    now_remark = "支付订单 ：" + orderId+","+remark;
+    now_nextAction = { type: 0, id: orderId };
+  }
+  WXAPI.wxpaynow({
+    token: wx.getStorageSync('token'),
+    money: money,
+    remark: now_remark,
+    payName: "在线支付",
+    nextAction: now_nextAction
   }).then(function (res) {
     if (res.code == 0) {
       // 发起支付
@@ -33,6 +91,9 @@ function wxpay(app, money, orderId, redirectUrl) {
           })
           // 提示支付成功
           wx.showToast({ title: '支付成功' })
+          if (redirectUrl + "1" == "1") {
+            return;
+          }
           wx.redirectTo({
             url: redirectUrl
           });
@@ -52,5 +113,6 @@ function wxpay(app, money, orderId, redirectUrl) {
 }
 
 module.exports = {
-  wxpay: wxpay
+  wxpay: wxpay,
+  wxpaynow: wxpaynow
 }

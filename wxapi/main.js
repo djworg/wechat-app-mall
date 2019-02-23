@@ -126,6 +126,9 @@ module.exports = {
   wxpay: (data) => {
     return request('/pay/wx/wxapp', true, 'post', data)
   },
+  wxpaynow: (data) => {
+    return request('/payBill/pay', true, 'post', data)
+  },
   alipay: (data) => {
     return request('/pay/alipay/semiAutomatic/payurl', true, 'post', data)
   },
@@ -291,5 +294,8 @@ module.exports = {
   },
   cashLogs: (data) => {
     return request('/user/cashLog', true, 'post', data)
-  }
+  },
+  rechargeRule:() => {
+    return request('/user/recharge/send/rule', true, 'get');
+  } 
 }

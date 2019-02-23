@@ -246,6 +246,11 @@ Page({
     })
 
   },
+  toPayNow: function () {
+    wx.switchTab({
+      url: "/pages/index/index"
+    });
+  },
   toSearch: function() {
     this.setData({
       curPage: 1
