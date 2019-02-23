@@ -88,10 +88,7 @@ picker {
 .font{
   color:red;
   font-size:14px;
-
-
 }
 .recharge-rule-view{
   margin-top: 50rpx;
-  
 }
