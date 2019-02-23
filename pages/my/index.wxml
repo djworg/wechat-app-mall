@@ -24,7 +24,7 @@
     </view>
     <view class='item' bindtap='goOrder' data-type="1">
       <image class="icon" src="/images/order/fahuo.png" background-size="cover"></image>
-      <view class='text'>待商家确认</view>
+      <view class='text'>消费订单</view>
     </view>
     <view class='item' bindtap='goOrder' data-type="2">
       <image class="icon" src="/images/order/shouhuo.png" background-size="cover"></image>

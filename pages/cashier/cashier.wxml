@@ -1,6 +1,21 @@
 <view class="container">
     <form bindsubmit="confirmPay">
     <view class="form-box">
+      <view class="row-wrap">
+       <view class="label">选择发型师</view>
+        <radio-group name="staff" class="radio-group">
+          <label class="radio">
+            <radio value="01" /> 1号
+          </label> 
+          
+          <label class="radio" style='margin-left:20rpx;'>
+            <radio value="02" /> 2号
+          </label>
+          
+        </radio-group>
+      </view>
+    </view>
+    <view class="form-box">
         <view class="row-wrap">
             <view class="label">金额</view>
             <view class="label-right">
@@ -25,17 +40,16 @@
           <label class="radio" style='margin-left:20rpx;'>
             <radio value="recharge" /> 充值 
           </label>
-          
+          <label class='font' style='margin-left:20rpx'>充{{confine}}送{{send}}</label>
         </radio-group>
       </view>
     </view>
     <button type="warn" class="save-btn" formType="submit">确定</button>
     </form>
-    {{rechargeDic}}
-    <view wx:for='{{rechargeDic}}' wx:for-item="item">
-          <label class='font'>充{{item.amount}}送{{item.give}}</label>
-          {{index}}  {{item}}
+    <view class='recharge-rule-view'></view>
+     <label style='font-size:12px'>充值优惠：</label>
+    <view  wx:for='{{rechargeDic}}' wx:for-item="item">
+       
+        <label class='font'>充{{item.confine}}送{{item.send}}</label>
     </view>
-
-    
 </view>

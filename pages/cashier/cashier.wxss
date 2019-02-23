@@ -87,7 +87,11 @@ picker {
 }
 .font{
   color:red;
-  font-size:12px;
-  margin-left:10px;
+  font-size:14px;
 
+
+}
+.recharge-rule-view{
+  margin-top: 50rpx;
+  
 }

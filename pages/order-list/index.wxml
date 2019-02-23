@@ -1,7 +1,10 @@
 <view class="container">
     <view class="status-box">
         <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+            <block wx:if="{{item == '待发货'}}">已付款</block>
+            <block wx:else>
             {{item}}
+            </block>
             <view class="{{tabClass[index]}}"></view>
         </view>
     </view>
@@ -13,7 +16,7 @@
         <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
             <view class="order-date">
                 <view class="date-box">下单时间：{{item.dateAdd}}</view>
-                <view class="status {{(item.status==-1 || item.status==4) ? '':'red'}}">{{item.statusStr}}</view>
+                <!-- <view class="status {{(item.status==-1 || item.status==4) ? '':'red'}}">{{item.statusStr}}</view> -->
             </view>
             <view class="goods-info" bindtap="orderDetail" data-id="{{item.id}}">
                 <view class="goods-des">
