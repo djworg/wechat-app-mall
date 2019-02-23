@@ -1,7 +1,4 @@
 <view class='btn-container'>
   <button class='btn btn-primary' bindtap='pay'>付款</button>
   <button class='btn btn-primary' open-type='contact'>微信预约</button>
-<!-- 
-  <contact-button class='btn btn-primary' session-from="weapp" size="27">微信预约</contact-button>
-   -->
 </view>
