@@ -9,7 +9,8 @@ Page({
    */
   data: {
     uid: undefined,
-    showalipay: false
+    showalipay: false,
+    isShowChargeRule:false
   },
   /**
    * 余额支付
@@ -66,10 +67,7 @@ Page({
     //使用余额支付
     that.balancePay(orderId, amount);
    
-    
-    
     //TODO 重定向支付成功页面
-
   },
   /**
  * 使用余额支付，先创建订单   
@@ -111,6 +109,14 @@ Page({
        that.comboPay(res.data.id, amount);
       });
       
+  },
+  /**
+   * 点击充值优惠的充值送
+   */
+  rechargeAmount:function(e){
+    var confine = e.currentTarget.dataset.confine;
+    var amount = confine;
+    wxpay.wxpay(app, amount, 0, "/pages/cashier/cashier");
   },
   confirmPay: function (e) {
     console.log(e)
@@ -224,6 +230,25 @@ Page({
       title: "付款"
     })
     
+  },
+
+/**
+ * 充值选择
+ */
+  rechargeChoose:function(options){
+    var that = this;
+    that.setData({
+      isShowChargeRule: true
+    });
+  },
+  /**
+   * 充值取消
+   */
+  rechargeCancel:function(options){
+    var that = this;
+    that.setData({
+      isShowChargeRule: false
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

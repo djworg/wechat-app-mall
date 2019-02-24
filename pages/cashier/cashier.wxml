@@ -33,22 +33,30 @@
       <view class="row-wrap">
         <radio-group name="type" class="radio-group">
           <label class="radio">
-            <radio value="pay" checked /> 微信支付
+            <radio value="pay"   checked /> 微信支付
           </label> 
           
           <label class="radio" style='margin-left:20rpx;'>
             <radio value="recharge" /> 充值 
           </label>
-          <label class='font' style='margin-left:20rpx'>充{{confine}}送{{send}}</label>
+          <!-- <label class='font' style='margin-left:20rpx'>充{{confine}}送{{send}}</label> -->
         </radio-group>
       </view>
     </view>
+    
+    <view class="charge-rule-wrap">
+          <block  wx:for='{{rechargeDic}}' wx:for-item="item">
+            <button  class='font charge-detail' bindtap="rechargeAmount" data-confine="{{item.confine}}" data-send="{{item.send}}">
+              <text>充{{item.confine}}送{{item.send}}</text>
+            </button>
+          </block>
+    </view>
     <button type="warn" class="save-btn" formType="submit">确定</button>
     </form>
-    <view class='recharge-rule-view'></view>
+    <!-- <view class='recharge-rule-view'></view>
      <label style='font-size:12px'>充值优惠：</label>
     <view  wx:for='{{rechargeDic}}' wx:for-item="item">
        
         <label class='font'>充{{item.confine}}送{{item.send}}</label>
-    </view>
+    </view> -->
 </view>

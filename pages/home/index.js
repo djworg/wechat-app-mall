@@ -17,23 +17,12 @@ Page({
    */
   pay: function (e) {
     wx.navigateTo({
-      // url: "/pages/cashier/cashier"
-      url: "/pages/pay-result/index"
+      url: "/pages/cashier/cashier"
+
     })
    
   },
 
-/**
- * 预约，直接打开微信客服
- */
-  dating:{
-
-  },
-
-/**
- * 充值优惠，从服务器中获得冲x送y的参数，再进行充值
- */
-  charge:{},
 
   /**
    * 生命周期函数--监听页面加载

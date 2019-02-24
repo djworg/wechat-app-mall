@@ -1,10 +1,15 @@
 <!--pages/pay-result/index.wxml-->
 <view class='logo'>
-  <image  style="width: 200rpx; height: 177rpx;" src='/images/wxpaylogo.jpg'/>
+  <image  style="width: 170rpx; height: 140rpx;" src='/images/wxpaylogo.jpg'/>
   <view>
     <label class='font'>支付成功</label>
   </view>
 </view>
+
+
+<view class='time-wrap'>
+        <canvas canvas-id='clock' style='width:{{canvasHeight}}px;height:{{canvasHeight}}px'></canvas>
+  </view>
 
 <view class='info-wrap'>
   <view class='labe-wrap'>
@@ -17,9 +22,6 @@
   
 </view>
 
-<view class='time-wrap'>
-        <canvas canvas-id='clock' style='width:{{canvasHeight}}px;height:{{canvasHeight}}px'></canvas>
-  </view>
 
 
 
