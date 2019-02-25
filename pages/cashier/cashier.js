@@ -18,8 +18,19 @@ Page({
   balancePay: function (orderId, amount) {
     var that = this;
     WXAPI.orderPay(orderId, wx.getStorageSync('token')).then(function (res) {
-      wx.hideLoading();
-      that.onShow();
+      if(res.code == 0){
+        wx.hideLoading();
+        wx.redirectTo({
+          url: '/pages/pay-result/index?amount='+amount,
+        });
+      }else{
+        wx.showModal({
+          title: '错误',
+          content: '余额支付失败:' + res.msg,
+          showCancel: false
+        });
+      }
+    
     });
   },
 
@@ -59,15 +70,13 @@ Page({
       return;
     }
     console.log(wxNeedPay+"---"+amount);
-    if(wxNeedPay > 0){
-      
-      //先充值，再支付
-      wxpay.wxpay(app, wxNeedPay, orderId, "");
+    if(wxNeedPay <= 0){
+      //使用余额支付
+      that.balancePay(orderId, amount);
+    }else{
+     //余额不够，将使用组合支付，或者全部微信支付的方式
+      wxpay.wxpay(app, wxNeedPay, orderId, "/pages/pay-result/index?amount=" + amount);
     }
-    //使用余额支付
-    that.balancePay(orderId, amount);
-   
-    //TODO 重定向支付成功页面
   },
   /**
  * 使用余额支付，先创建订单   
@@ -88,7 +97,12 @@ Page({
       wx.hideLoading();
       return;
     }
-    var remark = "发型师工号为："+staff+"，微信支付："+wxNeedPay+"，余额支付："+(amount-wxNeedPay);
+    var remark = "发型师工号为：" + staff;
+    if(wxNeedPay > 0){
+      remark += ",微信支付：" + amount;  
+    }else{
+      remark += "，余额支付：" + amount;  
+    }
     console.log(remark); // 备注信息
     var postData = {
       token: loginToken,
@@ -105,7 +119,6 @@ Page({
             })
             return;
         }
-
        that.comboPay(res.data.id, amount);
       });
       
@@ -114,9 +127,30 @@ Page({
    * 点击充值优惠的充值送
    */
   rechargeAmount:function(e){
+    var that = this;
     var confine = e.currentTarget.dataset.confine;
     var amount = confine;
-    wxpay.wxpay(app, amount, 0, "/pages/cashier/cashier");
+    that.recharge(amount);
+  },
+  recharge:function(amount){
+    //充值后检查有没有绑定手机号，如果没有绑定，则提示绑定手机号
+    var that = this;
+    wxpay.wxpay(app, amount, 0, "");
+    that.checkBindPhoneNum();
+  },
+  checkBindPhoneNum:function(){
+    WXAPI.userDetail(wx.getStorageSync('token')).then(function (res) {
+      if (res.code == 0) {
+        let _data = {}
+        _data.apiUserInfoMap = res.data
+        if (!res.data.base.mobile) {
+          //没有绑定手机号，提示绑定手机号
+          wx.navigateTo({
+            url: '/pages/auth-phone/index',
+          })
+        }
+      }
+    });
   },
   confirmPay: function (e) {
     console.log(e)
@@ -140,7 +174,7 @@ Page({
       })
       return
     }
-    if (staff == "" || staff + '1' == '1' || undefined == staff) {
+    if (type != 'recharge' && (staff == "" || staff + '1' == '1' || undefined == staff)) {
       wx.showModal({
         title: '错误',
         content: '请选择发型师',
@@ -157,8 +191,7 @@ Page({
       break;
       case 'recharge':{
         // 充值
-        
-        wxpay.wxpay(app, amount, 0, "/pages/cashier/index");
+        that.recharge(amount);
       };
       break;
     }
@@ -232,24 +265,6 @@ Page({
     
   },
 
-/**
- * 充值选择
- */
-  rechargeChoose:function(options){
-    var that = this;
-    that.setData({
-      isShowChargeRule: true
-    });
-  },
-  /**
-   * 充值取消
-   */
-  rechargeCancel:function(options){
-    var that = this;
-    that.setData({
-      isShowChargeRule: false
-    });
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

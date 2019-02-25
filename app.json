@@ -24,7 +24,8 @@
     "pages/fetch-coupon/index",
     "pages/category/category",
     "pages/cashier/cashier",
-    "pages/pay-result/index"
+    "pages/pay-result/index",
+    "pages/auth-phone/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

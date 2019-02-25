@@ -33,7 +33,7 @@
       <view class="row-wrap">
         <radio-group name="type" class="radio-group">
           <label class="radio">
-            <radio value="pay"   checked /> 微信支付
+            <radio value="pay"   checked /> 支付
           </label> 
           
           <label class="radio" style='margin-left:20rpx;'>

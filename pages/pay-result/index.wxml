@@ -17,8 +17,12 @@
   </view>
   
   <view class='labe-wrap'>
-    消费金额：<label style='font-size: 80rpx'>¥ 50.00{{amount}}</label>
+    消费金额：<label style='font-size: 80rpx'>¥ {{amount}}</label>
   </view>
+    <view class='labe-wrap'>
+    账户剩余：<label>¥ {{balance}}</label>
+  </view>
+  
   
 </view>
 

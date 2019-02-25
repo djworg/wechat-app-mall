@@ -1,3 +1,4 @@
+const WXAPI = require('../../wxapi/main')
 Page({
   data: {
     width: 0,
@@ -19,6 +20,15 @@ Page({
         })
       }
     })
+
+    WXAPI.userAmount(wx.getStorageSync('token')).then(function (res) {
+      if (res.code == 0) {
+        wx.setStorageSync('balance', res.data.balance);
+        that.setData({
+          balance: res.data.balance.toFixed(2)
+        });
+      } 
+    });
 
     that.setData({
       mallName: wx.getStorageSync('mallName'),
