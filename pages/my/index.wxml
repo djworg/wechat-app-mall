@@ -10,7 +10,7 @@
       <navigator url="/pages/admin-page/index" hover-class="navigator-hover">管理员功能</navigator>
     </view>
   </block>
-  <block wx:else>
+  <!-- <block wx:else> -->
     <view class="asset">
     <view class='item' bindtap='goAsset'>
       <view>{{balance}}</view>
@@ -59,7 +59,7 @@
       <view class="my-item">
         <navigator url="/pages/mycoupons/index" hover-class="navigator-hover">优惠券</navigator>
       </view>
-  </block>
+  <!-- </block> -->
   <view wx:if="{{!userMobile}}" class="my-item" style="border:none;padding-right:150rpx;width:auto;">
     <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机号码</button>
   </view>

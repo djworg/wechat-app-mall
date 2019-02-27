@@ -25,6 +25,40 @@ Page({
       recharge_amount_min: recharge_amount_min
     });
   },
+  /**
+ * 获得充值活动
+ */
+  getRechargeRule() {
+    var that = this;
+    // 获取充值活动优惠
+    WXAPI.rechargeRule().then(function (res) {
+      if (res.code == 0) {
+        var arr = res.data;
+        that.setData({
+          rechargeDic: arr,
+          confine: arr[0].confine,
+          send: arr[0].send
+        });
+
+      } else {
+        wx.showModal({
+          title: '错误',
+          content: '无法获得充值优惠',
+          showCancel: false
+        });
+      }
+    });
+  },
+
+  /**
+     * 点击充值优惠的充值送
+     */
+  rechargeAmount: function (e) {
+    var confine = e.currentTarget.dataset.confine;
+    var amount = confine;
+    wxpay.wxpay(app, amount, 0, "/pages/cashier/cashier");
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -37,7 +71,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getRechargeRule();
   },
 
   /**
