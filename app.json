@@ -25,7 +25,9 @@
     "pages/category/category",
     "pages/cashier/cashier",
     "pages/pay-result/index",
-    "pages/auth-phone/index"
+    "pages/auth-phone/index",
+    "pages/admin-page/index",
+    "pages/k-asset/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

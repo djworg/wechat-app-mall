@@ -67,6 +67,7 @@ Page({
     var that = this;
     WXAPI.userDetail(wx.getStorageSync('token')).then(function (res) {
       if (res.code == 0) {
+       
         let _data = {}
         _data.apiUserInfoMap = res.data
         if (res.data.base.mobile) {

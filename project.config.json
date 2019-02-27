@@ -6,7 +6,8 @@
 		"postcss": false,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
@@ -32,12 +33,14 @@
 		},
 		"miniprogram": {
 			"current": 0,
-			"list": [{
-				"id": -1,
-				"name": "home",
-				"pathName": "pages/index/index",
-				"scene": null
-			}]
+			"list": [
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/index/index",
+					"scene": null
+				}
+			]
 		}
 	}
 }

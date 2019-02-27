@@ -107,7 +107,8 @@ Page({
     var postData = {
       token: loginToken,
       goodsJsonStr: '[{"goodsId": ' + goodsId + ',"number":' + num + '}]',
-      remark: remark
+      remark: remark,
+      isCanHx:true//可以核销
     };
      WXAPI.orderCreate(postData).then(function (res) {
         if (res.code != 0) {

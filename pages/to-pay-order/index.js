@@ -16,6 +16,7 @@ Page({
     hasNoCoupons: true,
     coupons: [],
     youhuijine: 0, //优惠券金额
+    isCanHx: true,//需要核销码
     curCoupon: null // 当前选择使用的优惠券
   },
   onShow: function () {
@@ -77,7 +78,8 @@ Page({
     var postData = {
       token: loginToken,
       goodsJsonStr: that.data.goodsJsonStr,
-      remark: remark
+      remark: remark,
+      isCanHx:that.data.isCanHx
     };
     if (that.data.kjId) {
       postData.kjid = that.data.kjId
