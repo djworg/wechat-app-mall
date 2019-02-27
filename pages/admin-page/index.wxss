@@ -172,7 +172,6 @@
     border:1px solid #e64340;
     color: #e64340;
 }
-
 .asset {
   display: flex;
   border-top: 1px solid #eee;

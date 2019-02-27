@@ -82,6 +82,7 @@ picker {
     height: 100%;
     margin-right: 20rpx;
 }
+
 .hui{
     color: #777;
 }
