@@ -8,7 +8,13 @@ page{
 .form-box{
     width:100%;
     background-color: #fff;
-    margin-top: 20rpx;
+    mar
+    
+    
+    
+    
+    
+    gin-top: 20rpx;
 }
 .row-wrap{
     width: 720rpx;
