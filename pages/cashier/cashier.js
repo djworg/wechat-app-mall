@@ -136,6 +136,9 @@ Page({
   recharge:function(amount){
     //充值后检查有没有绑定手机号，如果没有绑定，则提示绑定手机号
     var that = this;
+    this.setData({
+      amount: amount
+    });
     wxpay.wxpay(app, amount, 0, "");
     that.checkBindPhoneNum();
   },
@@ -241,9 +244,7 @@ Page({
           console.log(res.data);
           var arr = res.data;
           that.setData({
-            rechargeDic: arr,
-            confine:arr[0].confine,
-            send:arr[0].send
+            rechargeDic: arr
           });
         
         }else{
