@@ -128,10 +128,12 @@ Page({
    * 点击充值优惠的充值送
    */
   rechargeAmount:function(e){
-    var that = this;
     var confine = e.currentTarget.dataset.confine;
     var amount = confine;
-    that.recharge(amount);
+    this.setData({
+      amount: amount
+    });
+    this.recharge(amount);
   },
   recharge:function(amount){
     //充值后检查有没有绑定手机号，如果没有绑定，则提示绑定手机号
@@ -241,12 +243,10 @@ Page({
     // 获取充值活动优惠
     WXAPI.rechargeRule().then(function(res){
         if(res.code == 0){
-          console.log(res.data);
           var arr = res.data;
           that.setData({
             rechargeDic: arr
           });
-        
         }else{
           wx.showModal({
             title: '错误',
