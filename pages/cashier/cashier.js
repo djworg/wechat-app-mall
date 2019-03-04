@@ -10,7 +10,8 @@ Page({
   data: {
     uid: undefined,
     showalipay: false,
-    isShowChargeRule:false
+    isShowChargeRule:false,
+    goodsId:undefined
   },
   /**
    * 余额支付
@@ -52,6 +53,32 @@ Page({
       wxNeedPay = 0;
     }
     return wxNeedPay;
+  },
+
+/**
+ * 获得员工对应的商品id，以及员工的名称
+ */
+  getStaffNum: function(){
+    var that = this;
+    // var data = wx.getStorageSync('staff');
+    // if(data != ""){
+    //   that.setData({
+    //     staffJson:data
+    //   });
+    //   return;
+    // }
+    WXAPI.queryConfig({
+      key: 'staff'
+    }).then(function (res) {
+      if (res.code == 0) {
+        var json = JSON.parse(res.data.value);
+        // wx.setStorageSync('staff', json);
+        console.log(json[0].name);
+        that.setData({
+          staffJson: json
+        });
+      }
+    })
   },
   /**
       * 支付
@@ -159,7 +186,6 @@ Page({
     });
   },
   confirmPay: function (e) {
-    console.log(e)
     var that = this;
     var amount = e.detail.value.amount;
     var staff = e.detail.value.staff;
@@ -203,14 +229,14 @@ Page({
     }
     
   },
+  radioSelect: function(e){
+    this.setData({
+      goodsId: e.currentTarget.dataset.goodsid
+    });
+    this.getGoodsId(e.detail.value);
+  },
   getGoodsId:function(staff){
-    var goodsId;
-    if(staff == '01'){
-      goodsId = '117861';
-    }else {
-      goodsId = '118867';
-    }
-    return goodsId;
+    return this.data.goodsId;
   },
   
   /**
@@ -248,11 +274,11 @@ Page({
             rechargeDic: arr
           });
         }else{
-          wx.showModal({
-            title: '错误',
-            content: '无法获得充值优惠',
-            showCancel: false
-          });
+          // wx.showModal({
+          //   title: '错误',
+          //   content: '无法获得充值优惠',
+          //   showCancel: false
+          // });
         }
     });
   },
@@ -280,6 +306,7 @@ Page({
   onShow: function () {
     this.getUserAmount();
     this.getRechargeRule();
+    this.getStaffNum();
   },
 
   /**
