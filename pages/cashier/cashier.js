@@ -267,7 +267,7 @@ Page({
   getRechargeRule(){
     var that = this;
     // 获取充值活动优惠
-    WXAPI.rechargeRule().then(function(res){
+    WXAPI.rechargeSendRules().then(function(res){
         if(res.code == 0){
           var arr = res.data;
           that.setData({
