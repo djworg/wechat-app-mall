@@ -295,10 +295,7 @@ module.exports = {
   cashLogs: (data) => {
     return request('/user/cashLog', true, 'post', data)
   },
-  /**
-   * 充值送规则
-   */
-  rechargeRule: (data) =>{
-    return request('/user/recharge/send/rule', true, 'get', data)
+  rechargeSendRules: () => {
+    return request('/user/recharge/send/rule', true, 'get')
   }
 }
