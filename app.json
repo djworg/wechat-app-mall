@@ -27,6 +27,7 @@
     "pages/pay-result/index",
     "pages/auth-phone/index",
     "pages/admin-page/index",
+    "pages/admin-login/index",
     "pages/k-asset/index"
   ],
   "window": {

@@ -119,25 +119,9 @@ Page({
     });
   },
   adminLogin:function(){
-    //先检查token是否过期
-    
-    var postData = {
-      merchantKey: CONFIG.key,
-      merchantNo: CONFIG.merchantNo
-    };
-
-    BACKENDAPI.adminLogin(postData).then(function (res) {
-      if (res.code == 0) {
-        wx.setStorageSync('x_token', res.data);
-      } else {
-        wx.showModal({
-          title: '提示',
-          content: '管理员认证失败',
-        })
-        wx.navigateBack();
-      }
-    });
-
+    wx.redirectTo({
+      url: '/pages/admin-login/index',
+    })
   },
   onReady: function () {
     // 生命周期函数--监听页面初次渲染完成

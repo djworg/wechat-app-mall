@@ -65,6 +65,20 @@ module.exports = {
   adminLogin: (data) => {
     return request('/login/key', false, 'post', data)
   },
+
+  /**
+  * 管理员手动登陆
+  */
+  adminManualLogin: (data) => {
+    return request('/login/userName', false, 'post', data)
+  },
+
+  /**
+  * 获取验证码
+  */
+  getCodeUri: (data) => {
+    return API_BASE_URL_back +'/code?k=';
+  },
   /**
    * 核销订单
    */
