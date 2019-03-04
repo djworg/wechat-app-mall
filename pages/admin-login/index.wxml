@@ -1,0 +1,36 @@
+<view class="container">
+    <form bindsubmit="login" report-submit="true">
+    <view class="form-box">
+        <view class="row-wrap">
+            <view class="label">用户名</view>
+            <view class="label-right">
+                <input name="uname" value="{{uname}}" class="input" type="text" placeholder="请输入用户名"/>
+            </view>
+        </view>
+    </view>
+
+     <view class="form-box">
+        <view class="row-wrap">
+            <view class="label">密码</view>
+            <view class="label-right">
+                <input name="pass" value="{{pass}}" class="input" type="password"  placeholder="请输入密码"/>
+            </view>
+        </view>
+    </view>
+
+     <view class="form-box">
+        <view class="row-wrap">
+            <view class="label">验证码</view>
+            <view class="label-right-code">
+                <input name="code" class="input" type="text" placeholder="请输入验证码"/>
+               
+            </view>
+             <image class='code-image' bindtap='changeCode' src='{{uri}}'></image>
+        </view>
+    </view>
+    
+
+
+    <button type="primary" class="save-btn" formType="submit">登录</button>
+    </form>
+</view>
