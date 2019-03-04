@@ -101,24 +101,33 @@ Page({
       });
     }
   },
-  kAsset: function(){
-    wx.navigateTo({
-      url: '../k-asset/index'
-    })
-  },
+
   //检查是否需要重新登录，如果需要，则登陆
   checkTokenExpire: function(){
     var that = this;
+    var x_token = wx.getStorageSync('x_token');
+    if(x_token == "" || x_token == undefined){
+      that.adminLogin();
+      return;
+    }
     var data = {
       "x_token": wx.getStorageSync('x_token')
     };
     BACKENDAPI.isTokenExpire(data).then(function(res){
       if(res.code != 0){
         that.adminLogin();
+        return;
       }
     });
   },
   adminLogin:function(){
+    wx.redirectTo({
+      url: '/pages/admin-login/index',
+    })
+  },
+  logout:function(){
+    wx.removeStorageSync('x_token');
+    wx.removeStorageSync('pass');
     wx.redirectTo({
       url: '/pages/admin-login/index',
     })

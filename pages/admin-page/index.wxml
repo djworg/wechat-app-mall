@@ -1,12 +1,10 @@
 <view class="container">
   <view class="asset">
     <view class='item' bindtap='kAsset'>
-      <view>{{balance}}</view>
       <view>余额扣除</view>
     </view>
-    <view class='item right' bindtap='goScore'>
-      <view>{{score}}</view>
-      <view>剩余积分</view>
+    <view class='item right' bindtap='logout'>
+      <view>退出登录</view>
     </view>
   </view>
 

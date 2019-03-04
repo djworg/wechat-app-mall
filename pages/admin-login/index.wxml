@@ -28,9 +28,6 @@
              <image class='code-image' bindtap='changeCode' src='{{uri}}'></image>
         </view>
     </view>
-    
-
-
     <button type="primary" class="save-btn" formType="submit">登录</button>
     </form>
 </view>
