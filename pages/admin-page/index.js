@@ -24,6 +24,11 @@ Page({
       url: "/pages/order-details/index?id=" + orderId
     })
   },
+  kAsset: function () {
+    wx.navigateTo({
+      url: '../k-asset/index'
+    })
+  },
   cancelOrderTap: function (e) {
     var that = this;
     var orderId = e.currentTarget.dataset.id;
@@ -177,7 +182,7 @@ Page({
     var that = this;
     var postData = {
       x_token: wx.getStorageSync('x_token'),
-      pageSize:10,
+      pageSize:50,
     };
     postData.status = that.data.currentType;
     this.getOrderStatistics();
