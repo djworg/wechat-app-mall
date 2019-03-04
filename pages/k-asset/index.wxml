@@ -20,7 +20,6 @@
               <view class="label">备注</view>
               <view class="label-right">
                   <input name="remark" class="input" type="text" placeholder="备注信息"/>
-                  
               </view>
             </view>
     </view>
