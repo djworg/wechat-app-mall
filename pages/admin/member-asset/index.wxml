@@ -1,0 +1,40 @@
+<view class="asset">
+  <view class='item'>    
+    <view>可用余额(元)</view>
+    <view>{{balance}}</view>
+  </view>
+  <view class='item'>    
+    <view>冻结金额(元)</view>
+    <view>{{freeze}}</view>
+  </view>
+  <view class='item right'>    
+    <view>累计消费(元)</view>
+    <view>{{totleConsumed}}</view>
+  </view>
+</view>
+<view class='btn-view'>
+
+</view>
+<view class='no-data' wx:if="{{!cashlogs}}">暂无资金明细~</view>
+<view class='cashlogs' wx:if="{{cashlogs}}" wx:for-items="{{cashlogs}}" wx:key="{{index}}">
+  <view class='profile'>
+   <block wx:if='{{item.amount < 0}}'>
+      <view class='typeStr'>
+        线下消费扣款
+      </view>
+    </block>
+    <block wx:else>
+      <view class='typeStr'>
+      {{ item.typeStr }}
+      </view>
+    </block>
+
+    <view class='dateAdd'>{{ item.dateAdd }}</view>
+  </view>
+  <view class='amount' style="color: {{ (item.amount > 0 && item.behavior ==0 ) ? 'red' : 'green' }}"> 
+    <block wx:if='{{item.amount > 0}}'>
+    {{( item.behavior ==0) ? '+' : '-' }}
+    </block> 
+    {{ item.amount }} 
+  </view>
+</view>

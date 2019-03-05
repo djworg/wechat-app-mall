@@ -99,5 +99,14 @@ module.exports = {
    */
   deductFAsset(data){
     return request('/user/apiExtUserPay/save', false, 'post', data)  
+  },
+  /**
+   * 查看某个用户的余额
+   */
+  userAmount(data){
+    return request('/user/apiExtUserCash/list', false, 'post', data); 
+  },
+  cashLogs(data){
+    return request('/user/apiExtUserCashLog/list', false, 'post', data); 
   }
 }

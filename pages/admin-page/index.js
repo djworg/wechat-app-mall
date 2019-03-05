@@ -26,7 +26,7 @@ Page({
   },
   kAsset: function () {
     wx.navigateTo({
-      url: '../k-asset/index'
+      url: '/pages/admin/k-asset/index'
     })
   },
   cancelOrderTap: function (e) {
@@ -180,12 +180,19 @@ Page({
   onShow: function () {
     // 获取订单列表
     var that = this;
+    that.orderList();
+    that.getOrderStatistics();
+  },
+  orderList:function(){
+    var that = this;
     var postData = {
       x_token: wx.getStorageSync('x_token'),
-      pageSize:50,
+      pageSize: 50,
     };
     postData.status = that.data.currentType;
-    this.getOrderStatistics();
+    wx.showLoading({
+      title: '加载中...',
+    });
     BACKENDAPI.orderList(postData).then(function (res) {
       if (res.code == 0) {
         that.setData({
@@ -198,6 +205,7 @@ Page({
           usersMap: {}
         });
       }
+      wx.hideLoading();
     })
   },
   onHide: function () {

@@ -1,6 +1,6 @@
-//余额扣除 pages/k-asset/index.js
+//余额扣除 pages/admin/k-asset/index.js
 
-const BACKENDAPI = require('../../wxapi/backend')
+const BACKENDAPI = require('../../../wxapi/backend')
 Page({
 
 
@@ -92,7 +92,9 @@ Page({
           content: '成功扣除',
           showCancel: false,
           success: function () {
-            wx.navigateBack();
+            wx.navigateTo({
+              url: '/pages/admin/member-asset/index?mobile=' + postData.mobile,
+            })
           }
         })
       } else {

@@ -28,7 +28,8 @@
     "pages/auth-phone/index",
     "pages/admin-page/index",
     "pages/admin-login/index",
-    "pages/k-asset/index"
+    "pages/admin/k-asset/index",
+    "pages/admin/member-asset/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

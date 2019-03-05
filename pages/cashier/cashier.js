@@ -60,13 +60,6 @@ Page({
  */
   getStaffNum: function(){
     var that = this;
-    // var data = wx.getStorageSync('staff');
-    // if(data != ""){
-    //   that.setData({
-    //     staffJson:data
-    //   });
-    //   return;
-    // }
     WXAPI.queryConfig({
       key: 'staff'
     }).then(function (res) {
