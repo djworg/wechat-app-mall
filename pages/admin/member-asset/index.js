@@ -52,7 +52,8 @@ Page({
           balance: res.data.result[0].balance.toFixed(2),
           freeze: res.data.result[0].freeze.toFixed(2),
           totleConsumed: res.data.result[0].totleConsumed.toFixed(2),
-          score: res.data.result[0].score
+          score: res.data.result[0].score,
+          userMap: res.data.userMap
         });
       }
     })

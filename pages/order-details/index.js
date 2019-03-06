@@ -110,9 +110,11 @@ Page({
         reputations.push(reputations_json);
         i++;
       }
+      
       postJsonString.reputations = reputations;
+
       WXAPI.orderReputation({
-        postJsonString: postJsonString
+        postJsonString: JSON.stringify(postJsonString)
       }).then(function (res) {
         if (res.code == 0) {
           that.onShow();

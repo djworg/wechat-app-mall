@@ -15,8 +15,7 @@
 	height: 160rpx;
 }
 .userinfo-nickname {
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
+  margin-top: 15rpx;
   font-size: 14px;
 }
 

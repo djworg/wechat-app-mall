@@ -1,3 +1,10 @@
+	 <block wx:for="{{userMap}}">
+    <view class="userinfo">
+      <image wx:if="{{item && item.avatarUrl}}" class="userinfo-avatar" src="{{ item.avatarUrl }}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{ item.nick}}</text>
+      <text class="userinfo-nickname">{{ item.mobile}}  </text>
+    </view>
+  </block>
 <view class="asset">
   <view class='item'>    
     <view>可用余额(元)</view>
