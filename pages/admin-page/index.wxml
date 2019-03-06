@@ -15,7 +15,7 @@
         </view>
     </view>
     <view class="no-order" hidden="{{orderList ? true : false}}">
-        <image src="/images/no-order.png" class="no-order-img"></image>
+        <image lazy-load="true" src="/images/no-order.png" class="no-order-img"></image>
         <view class="text">暂无订单</view>
     </view>
     <view class="order-list" hidden="{{orderList ? false : true}}">
@@ -33,7 +33,7 @@
             <view >
                 <view class="goods-img-container" >
                     <view class="img-box">
-                        <image src="{{usersMap[item.uid].avatarUrl}}" class="goods-img"></image>
+                        <image lazy-load="true" src="{{usersMap[item.uid].avatarUrl}}" class="goods-img"></image>
                         
                     </view>
                     <view style='display: flex;flex-direction:column;font-size:28rpx;margin-left:40rpx;'>

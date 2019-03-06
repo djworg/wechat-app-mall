@@ -18,15 +18,6 @@
             </block>  
         </view>  
    </view>
-
-    <!-- <view class="pay-container">
-      <view class="pay-now-btn" bindtap="toPayNow">
-                支付
-      </view>
-    </view> -->
-
-
-
     <view class="type-container">
         <scroll-view class="type-navbar" scroll-x="true">
             <view class="type-box" wx:for-items="{{categories}}" wx:key="id">
@@ -36,7 +27,7 @@
             </view>
         </scroll-view>
     </view>
-    <!-- <view class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} "> 
+     <view class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} "> 
 
 
     <view class="search-content">
@@ -47,7 +38,7 @@
       </button>
     </view>
   
-  </view> -->
+  </view> 
   
   
     <view wx:if="{{noticeList}}" class="notice">
@@ -75,7 +66,7 @@
     <view class="goods-container">
         <view class="goods-box" style="display:{{item.tags}}" wx:for-items="{{goods}}" wx:key="{{index}}" bindtap="toDetailsTap" data-id="{{item.id}}">
            <view class="img-box">
-              <image src="{{item.pic}}_m" class="image" mode="aspectFill" lazy-load="true"/>
+              <image lazy-load='true' src="{{item.pic}}_m" class="image" mode="aspectFill"/>
            </view>
            <view class="goods-title">{{item.name}}</view>
            <view style='display:flex;'>
