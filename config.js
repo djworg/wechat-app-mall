@@ -6,7 +6,7 @@ module.exports = {
   subDomain: "dengjunwen1992", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
   appid: "wx5fe06dfbe2ee57bc", // 您的小程序的appid，购物单功能需要使用
   shareProfile: '让我成为您的私人发型师', // 首页转发的时候话术
-  mode:"dev"
+  mode:"release"
 }
 /*
 根据自己需要修改下单时候的模板消息内容设置，可增加关闭订单、收货时候模板消息提醒；
