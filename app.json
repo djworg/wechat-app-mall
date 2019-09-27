@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/home/index",
     "pages/index/index",
     "pages/goods-details/index",
     "pages/shop-cart/index",
@@ -23,7 +22,6 @@
     "pages/sign/index",
     "pages/fetch-coupon/index",
     "pages/category/category",
-    "pages/cashier/cashier",
     "pages/pay-result/index",
     "pages/auth-phone/index",
     "pages/admin-page/index",
@@ -45,13 +43,13 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/home/index",
+        "pagePath": "pages/index/index",
         "iconPath": "images/nav/home-off.png",
         "selectedIconPath": "images/nav/home-on.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/shop-cart/index",
         "iconPath": "images/nav/cart-off.png",
         "selectedIconPath": "images/nav/cart-on.png",
         "text": "商城"

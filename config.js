@@ -3,9 +3,9 @@ module.exports = {
   note: '支付增加确认框、省市区升级至最新数据库',
   mversion: "1.0.0",
   note: '接口封装',
-  subDomain: "dengjunwen1992", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
-  appid: "wx5fe06dfbe2ee57bc", // 您的小程序的appid，购物单功能需要使用
-  shareProfile: '让我成为您的私人发型师', // 首页转发的时候话术
+  subDomain: "yingke", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
+  appid: "wx048c2e0a9f39d8eb", // 您的小程序的appid，购物单功能需要使用
+  shareProfile: '丹霞山', // 首页转发的时候话术
   mode:"dev"
 }
 /*
